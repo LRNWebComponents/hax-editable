@@ -1,0 +1,42 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-toolbar/paper-toolbar.html">
+
+<!--
+`hax-editable`
+
+
+@demo demo/index.html 
+-->
+
+<dom-module id="hax-editable">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      div[contenteditable] {
+        position: relative;
+        z-index: 11;
+      }
+      
+    </style>
+    
+    <div contenteditable$="{{edit}}">
+      <content></content>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'hax-editable',
+
+      properties: {
+        edit: {
+          type: Boolean,
+        },
+      }
+    });
+  </script>
+</dom-module>
