@@ -20,7 +20,6 @@
       }
 
     </style>
-
     <template is="dom-if" if="{{matchType('textfield', type)}}">
       <div contenteditable$="{{edit}}">
         <content></content>
@@ -31,7 +30,16 @@
         <content></content>
       </div>
     </template>
-    <!-- future support for date/time and other items that would have a modal pop up state -->
+    <template is="dom-if" if="{{matchType('date', type)}}">
+      <div contenteditable$="{{edit}}">
+        <content></content>
+      </div>
+    </template>
+    <template is="dom-if" if="{{matchType('time', type)}}">
+      <div contenteditable$="{{edit}}">
+        <content></content>
+      </div>
+    </template>
   </template>
 
   <script>
